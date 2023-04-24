@@ -1,4 +1,4 @@
-advertorch==0.2.4
+advertorch @ git+https://github.com/BorealisAI/advertorch.git
 cvxpy==1.3.1
 matplotlib==3.7.0
 numpy==1.23.5
