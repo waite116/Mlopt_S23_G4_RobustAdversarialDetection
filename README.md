@@ -7,3 +7,9 @@ Please see the requirements .txt file for the list of required libraries and pac
 ## To replicate experimental results
 Use the experiment runner ipynb notebook to run experiments that show the detectors results under the different setting as described in the project report. 
 
+## Deliverables 
+The folder "Deliverables" contains the following
+* Presentation Slides PDF 
+* Graded Progress Report
+* Final Report
+* Link to video of presentation
