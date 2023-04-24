@@ -4,5 +4,4 @@ matplotlib==3.7.0
 numpy==1.23.5
 tensorflow==2.10.0
 torch==2.0.0
-torchvision==0.13.1a0
 torchvision==0.15.0
