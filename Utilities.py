@@ -699,7 +699,7 @@ def detect_robust_single(network, device, D_s, D_a, attack_name="CW", subset_siz
         # get network results for reconstruction with attack
         x_hat_tensor = torch.Tensor(x_hat.reshape(28,28))
         x_hat_tensor = x_hat_tensor[None,None, :, :]
-        x_hat_tensor = x_hat_tensor.cuda()
+        x_hat_tensor = x_hat_tensor.to(device)
         out_x_hat = network(x_hat_tensor)
         pred_x_hat = out_x_hat.data.max(1, keepdim=True)[1][0].item()
         recon_correct += true_label == pred_x_hat
@@ -712,7 +712,7 @@ def detect_robust_single(network, device, D_s, D_a, attack_name="CW", subset_siz
         # get network results for reconstruction with attack
         x_hat_null_tensor = torch.Tensor(x_hat_null.reshape(28,28))
         x_hat_null_tensor = x_hat_null_tensor[None,None, :, :]
-        x_hat_null_tensor = x_hat_null_tensor.cuda()
+        x_hat_null_tensor = x_hat_null_tensor.to(device)
         out_x_hat_null = network(x_hat_null_tensor)
         pred_x_hat_null = out_x_hat_null.data.max(1, keepdim=True)[1][0].item()
         recon_null_correct += true_label == pred_x_hat_null
