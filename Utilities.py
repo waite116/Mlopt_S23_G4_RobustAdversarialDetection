@@ -126,10 +126,9 @@ def load_network(device):
     test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=test_batch_size, shuffle=False)
     model_path = 'Project Models/'
     PATH = model_path+'MNIST_CNN2.pth'
-    network = MNIST_CNN( )
-    checkpoint = torch.load(PATH)
+    network = MNIST_CNN( ).to(device)
+    checkpoint = torch.load(PATH, map_location=device)
     network.load_state_dict(checkpoint)
-    network = network.to(device)
     print("Running Test to Confirm load successful: ")
     test(network, test_loader, device)
     return network
